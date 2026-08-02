@@ -58,10 +58,10 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 def main() -> None:
-    token = os.getenv("TELEGRAM_BOT_TOKEN")
+    token = os.getenv("BOT_TOKEN")
     if not token:
         raise RuntimeError(
-            "Не задан TELEGRAM_BOT_TOKEN. Создай файл .env (см. README.md)."
+            "Не задан BOT_TOKEN. Установи переменную окружения BOT_TOKEN с токеном бота."
         )
 
     application = Application.builder().token(token).build()
